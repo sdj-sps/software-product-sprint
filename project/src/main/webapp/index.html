@@ -10,67 +10,92 @@
 
 <body>
     <div id="side-navigation-menu" class="app-font">
-        <button id="open-menu-button" class="app-button" onclick="openMenu()"><img
-                src="https://img.icons8.com/ios-filled/35/000000/menu-rounded.png" /></button>
+        <button id="open-menu-button" class="app-button flex center-xy" onclick="openMenu()"><img
+                src="https://img.icons8.com/ios-filled/30/000000/menu-rounded.png" /></button>
         <div id="side-menu">
             <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()">&times;</a>
-            <a href="index.html">Home</a>
-            <a href="playlist.html">Playlist</a>
-            <a href="index.html">Favorites</a>
+            <a href="index.html">
+                <h2>Home</h2>
+            </a>
+            <a href="index.html">
+                <h2>Favorites</h2>
+            </a>
 
-            <button id="dark-mode-toggle" class="app-button" onclick="darkMode()"><img
-                    src="https://img.icons8.com/material-outlined/40/000000/partly-cloudy-night.png" /></button>
+            <button id="dark-mode-toggle" class="app-button flex center-xy" onclick="darkMode()"><img
+                    src="https://img.icons8.com/ios-filled/30/000000/moon-symbol.png" /></button>
         </div>
     </div>
 
     <div id="main" class="app-font">
-        <h1 id="app-header" class="center-header">
+        <h1 id="main-header" class="app-header center-text flex center-xy">
             HeartBeat
         </h1>
 
-        <div id="workout-section">
-            <h1 id="workout-selection-header" class="center-header">
+        <div id="workout-section" class="flex center-xy flex-column">
+            <h1 id="workout-selection-header" class="app-header center-text flex center-xy header-font ">
                 Workout Selection
             </h1>
 
-            <div id="workout-selection-section" class="center-content">
-                <div id="workout-selection">
-                    <button value="Aerobics" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png" /></button>
-                    <button value="Bench Press" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/bench-press.png" /></button>
-                    <button value="Curls" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/curls-with-dumbbells.png" /></button>
-                    <button value="Jogging" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/running.png" /></button>
-                    <button value="Pilates" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/pilates.png" /></button>
-                    <button value="Pull-Ups" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/pullups.png" /></button>
-                    <button value="Push-Ups" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/pushups.png" /></button>
-                    <button value="Sit-Ups" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-glyphs/50/000000/sit-ups.png" /></button>
-                    <button value="Squats" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/squats.png" /></button>
-                    <button value="Treadmill" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/treadmill.png" /></button>
-                    <button value="Walking" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/walking.png" /></button>
-                    <button value="Weightlift" onclick="clickWorkout(this.value)"><img
-                            src="https://img.icons8.com/ios-filled/50/000000/deadlift.png" /></button>
-                </div>
+            <div id="workout-selection" class="flex center-y space-between">
+                <button value="Aerobics" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png" />
+                    <p>Aerobics</p>
+                </button>
+                <button value="Bench Press" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/bench-press.png" />
+                    <p>Bench Press</p>
+                </button>
+                <button value="Curls" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/curls-with-dumbbells.png" />
+                    <p>Curls</p>
+                </button>
+                <button value="Jogging" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/running.png" />
+                    <p>Jogging</p>
+                </button>
+                <button value="Pilates" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/pilates.png" />
+                    <p>Pilates</p>
+                </button>
+                <button value="Pull-Ups" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/pullups.png" />
+                    <p>Pull-Ups</p>
+                </button>
+                <button value="Push-Ups" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/pushups.png" />
+                    <p>Push-Ups</p>
+                </button>
+                <button value="Sit-Ups" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-glyphs/50/000000/sit-ups.png" />
+                    <p>Sit-Ups</p>
+                </button>
+                <button value="Squats" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/squats.png" />
+                    <p>Squats</p>
+                </button>
+                <button value="Treadmill" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/treadmill.png" />
+                    <p>Treadmill</p>
+                </button>
+                <button value="Walking" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/walking.png" />
+                    <p>Walking</p>
+                </button>
+                <button value="Weightlift" onclick="clickWorkout(this.value)"><img
+                        src="https://img.icons8.com/ios-filled/50/000000/deadlift.png" />
+                    <p>Weightlift</p>
+                </button>
             </div>
 
-            <div id="workout-submission-section">
-                <h2 id="workout-submission-header" class="center-header">
+            <div id="workout-submission-section" class="full-width center-xy flex flex-column">
+                <h2 id="workout-submission-header" class="app-header center-text flex center-xy">
                     Select a workout above or enter one below:
                 </h2>
 
-                <form id="workout-submission" class="center-content">
+                <form id="workout-submission" class="flex center-y space-between">
                     <label for="workout-select">Selected Workout</label>
                     <input type="text" id="workout-select" list="workouts">
-                    <datalist id="workouts">
+                    <datalist id="workouts" class="app-font">
                         <option value="Aerobics">
                         <option value="Bench Press">
                         <option value="Curls">
@@ -91,11 +116,16 @@
                     <label for="mins-select">Minutes</label>
                     <input type="number" id="mins-select" min="0">
 
-                    <button id="workout-submit-button" class="app-button" type="submit"><img
-                            src="https://img.icons8.com/fluent-systems-filled/40/000000/enter-2.png" /></button>
+                    <button id="workout-submit-button" class="app-button flex center-xy" type="submit"><img
+                            src="https://img.icons8.com/fluent-systems-filled/30/000000/enter-2.png" /></button>
                 </form>
             </div>
         </div>
+
+        <footer class="flex center-xy">
+            <button id="scroll-top-button" onclick="topFunction()" class="app-button flex center-xy"><img
+                    src="https://img.icons8.com/ios-filled/30/000000/up--v1.png" /></button>
+        </footer>
     </div>
 </body>
 
