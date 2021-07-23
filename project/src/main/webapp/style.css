@@ -1,11 +1,26 @@
-/*** Customization ***/
-/** Sizing **/
-body {margin: 0;}
+/* || GENERAL STYLES */
 
 .full-width {width: -webkit-fill-available;}
 
-/** Alignment **/
-.center-text {text-align: center;}
+.app-header {
+    height: 200px;
+    width: -webkit-fill-available;
+    margin: 0;
+}
+
+.app-button {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+}
+
+.app-button:hover {background-color: #5CB3C4;}
+
+/* || UTILITIES */
 
 .flex {display: flex;}
 
@@ -19,10 +34,7 @@ body {margin: 0;}
 
 .flex-column {flex-direction: column;}
 
-/** Fonts **/
-@font-face{font-family: Roboto-Bold; src: url(fonts/Roboto-Bold.ttf);}
-
-.header-font {font-family: Roboto-Bold;}
+/* || TYPOGRAPHY */
 
 @font-face{font-family: Roboto-Regular; src: url(fonts/Roboto-Regular.ttf);}
 
@@ -30,40 +42,21 @@ body {margin: 0;}
 
 .app-font input {font-family: Roboto-Regular;}
 
-/** Headers **/
-.app-header {
-    height: 200px;
-    width: -webkit-fill-available;
-    margin: 0;
-}
+/* || SITEWIDE */
 
-/** Buttons **/
-.app-button {
-    background-color: lightgray;
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
+body {margin: 0;}
 
-.app-button:hover {background-color: gray;}
+/* || HEADER */
 
-/*******************************************************************************************************************************************************************************/
-
-/*** Header ***/
 #main-header {
-    background-color: lightgray;
-    height: 500px;
-    font-size: 75px;
-    color: #C20615;
-    text-shadow: 2px 2px black;
+    background-color: #84293E;
+    height: 400px;
+    box-shadow: 0 0 10px black;
+    color: white;
 }
 
-/*******************************************************************************************************************************************************************************/
+/* || WORKOUT SELECTION */
 
-/*** Workout Selection ***/
 /* Style the workout selection container*/
 #workout-selection {
     background-image: url(https://images.unsplash.com/photo-1557564437-0995702f88fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
@@ -80,11 +73,11 @@ body {margin: 0;}
 /* Style the buttons in the workout selection container*/
 #workout-selection button{
     background-color: white;
-    padding: 30px;
-    border-color: black;
+    padding: 50px;
+    border: none;
     border-radius: 25px;
-    margin-right: 53px;
-    cursor: pointer;
+    margin-right: 57px;
+    box-shadow: 0 0 10px black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,10 +86,10 @@ body {margin: 0;}
 
 /* Display workout names when hovering over the buttons */
 #workout-selection p {
-    width: 100px;
+    width: 50px;
     margin: 50px 0 0 0;
-    font-family: Roboto-Bold;
-    font-size: medium; 
+    font-size: small;
+    font-weight: bold; 
     display: none;
 }
 
@@ -108,43 +101,58 @@ body {margin: 0;}
     transform: translateY(5px);
 }
 
-/*******************************************************************************************************************************************************************************/
+/* || WORKOUT SUBMISSION */
 
-/*** Workout Submission ***/
 /* Style the workout submission container */
-#workout-submission {
-    width: 1000px;
-    padding: 0 0 500px 0;
-}
+#workout-submission {width: 1000px; padding: 0;}
 
-#workout-submission label {font-size: medium;}
+#workout-submission label {font-size: medium; font-weight: bold;}
 
 #workout-submission input {
-    font-size: medium;
-    padding: 10px;
     background-color: white;
+    padding: 10px;
     border: 1px solid lightgray;
+    font-size: medium;
 }
 
-#workout-submit-button {padding: 0;}
+#workout-submit-button {padding: 0; margin-left: 30px;}
 
-/*******************************************************************************************************************************************************************************/
+/* || PLAYLIST SECTION */
 
-/*** Side Navigation Menu ***/
+#playlist-section {
+    height: 800px;
+    margin: 0 0 100px 0;
+}
+
+#playlist-header {
+    margin: 0;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#playlist-title {
+    height: 100px;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+/* || SIDE NAVIGATION MENU */
+
 #open-menu-button {
     position: fixed; /* Stay in place */
-    top: 0px; /* Stay at the top */
+    top: 10px; /* Stay at the top */
+    left: 10px;
 }
 
 #side-menu {
-    background-color: lightgray;
+    background-color: #84293E;
     position: fixed; /* Stay in place */
     height: 100%; /* 100% Full-height */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     width: 0; /* 0 width - change this with JavaScript */
-    padding-top: 50px; /* Place content 50px from the top */
+    padding-top: 100px; /* Place content 50px from the top */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
@@ -155,45 +163,43 @@ body {margin: 0;}
     top: 0;
     right: 25px;
     margin-left: 50px;
-    font-size: 36px;
+    font-size: x-large;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-}
+#main {transition: margin-left .5s;}
 
-/** Navigation Links **/
 #side-menu a {
     display: block;
     padding: 0px 0px 0px 30px;
     margin-bottom: 100px;
-    color: black;
+    color: white;
+    font-size: x-large;
     text-decoration: none;
     transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-#side-menu a:hover {
-    color: #f1f1f1;
-}
+#side-menu a:hover {color: #5CB3C4;}
 
-#dark-mode-toggle {
+#moon-toggle {
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
     right: 100px;
 }
 
-/* Set the background to black and text to white */
-.dark-mode{
-    background-color: black;
-    color: white;
+#sun-toggle {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    display: none;
 }
 
-/*******************************************************************************************************************************************************************************/
+.dark-mode-gray {background-color: #2B2C30; color: white;}
 
-/*** Footer ***/
+/* || FOOTER */
+
 footer {
-    background-color: lightgray;
+    background-color: #84293E;
     height: 100px;
+    box-shadow: 0 0 10px black;
 }
