@@ -1,152 +1,159 @@
-/*** General ***/
-body {
+/* || GENERAL STYLES */
+
+.full-width {width: -webkit-fill-available;}
+
+.app-header {
+    height: 200px;
+    width: -webkit-fill-available;
     margin: 0;
-}
-
-@font-face{
-  font-family: Robot-Regular;
-  src: url(fonts/Roboto-Regular.ttf);
-}
-
-.app-font {
-    font-family: Robot-Regular;
-}
-
-.app-font input {
-    font-family: Robot-Regular;
-}
-
-.center-header {
-    text-align: center;
-    padding: 100px;
-    margin: 0;
-}
-
-.center-content {
-    display: flex;
-    justify-content: center;
 }
 
 .app-button {
-    background-color: lightgray;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    padding: 0;
     border: none;
-    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
 }
 
-.app-button:hover {
-    background-color: gray;
+.app-button:hover {background-color: #5CB3C4;}
+
+/* || UTILITIES */
+
+.flex {display: flex;}
+
+.center-x {justify-content: center;}
+
+.center-y {align-items: center;}
+
+.center-xy {justify-content: center; align-items: center;}
+
+.space-between {justify-content: space-between;}
+
+.flex-column {flex-direction: column;}
+
+/* || TYPOGRAPHY */
+
+@font-face{font-family: Roboto-Regular; src: url(fonts/Roboto-Regular.ttf);}
+
+.app-font {font-family: Roboto-Regular;}
+
+.app-font input {font-family: Roboto-Regular;}
+
+/* || SITEWIDE */
+
+body {margin: 0;}
+
+/* || HEADER */
+
+#main-header {
+    background-color: #84293E;
+    height: 400px;
+    box-shadow: 0 0 10px black;
+    color: white;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* || WORKOUT SELECTION */
 
-/*** Landing Page ***/
-/** Workout Selection **/
 /* Style the workout selection container*/
 #workout-selection {
-    width: 1500px;
-    height: 500px;
-    padding: 50px;
-    border-radius: 25px;
     background-image: url(https://images.unsplash.com/photo-1557564437-0995702f88fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
     background-position: bottom;
-}
-
-/* Sets the container as a horizontal list */
-#workout-selection {
+    height: 500px;
+    width: 1500px;
+    padding: 50px 0 50px 53px;
+    border-radius: 25px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
 }
 
 /* Style the buttons in the workout selection container*/
 #workout-selection button{
     background-color: white;
-    border-color: black;
-    border-radius: 25px;
     padding: 50px;
-    margin: 50px;
-    cursor: pointer;
-}
-
-#workout-selection button:hover {
-    background-color: lightgray;
-}
-
-#workout-selection button:active {
-    background-color: white;
-    transform: translateY(4px);
-}
-
-/** Workout Submission **/
-/* Style the workout submission container */
-#workout-submission {
+    border: none;
+    border-radius: 25px;
+    margin-right: 57px;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0px 100px 100px 100px;
+    flex-direction: column;
 }
 
-/* Style the contents of the workout submission form */
-#workout-submission label {
-    font-size: large;
-    margin: 5px 10px 5px 0;
+/* Display workout names when hovering over the buttons */
+#workout-selection p {
+    width: 50px;
+    margin: 50px 0 0 0;
+    font-size: small;
+    font-weight: bold; 
+    display: none;
 }
+
+#workout-selection button:hover p {display: block;}
+
+/* Set an animation for the buttons when pressing on them */
+#workout-selection button:active {
+    background-color: lightgray;
+    transform: translateY(5px);
+}
+
+/* || WORKOUT SUBMISSION */
+
+/* Style the workout submission container */
+#workout-submission {width: 1000px; padding: 0;}
+
+#workout-submission label {font-size: medium; font-weight: bold;}
 
 #workout-submission input {
-    font-size: large;
-    vertical-align: middle;
-    margin: 5px 10px 5px 0;
+    background-color: white;
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid lightgray;
+    font-size: medium;
 }
 
-#workout-submit-button {
-    padding: 0;
-    border-radius: 50%;
-    margin-left: 10px;
-    width: 60px;
-    height: 60px;
+#workout-submit-button {padding: 0; margin-left: 30px;}
+
+/* || PLAYLIST SECTION */
+
+#playlist-section {
+    height: 800px;
+    margin: 0 0 100px 0;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-/*** Playlist Page ***/
-/* Style the playlist media buttons */
-.media-button {
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    padding: 0px;
-    padding-top: 3px;
-    margin: 10px;
+#playlist-header {
+    margin: 0;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+#playlist-title {
+    height: 100px;
+    font-size: x-large;
+    text-decoration: none;
+}
 
-/*** Playing Page ***/
+/* || SIDE NAVIGATION MENU */
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
-/*** Side Navigation Menu ***/
-/** Open Menu Button **/
 #open-menu-button {
     position: fixed; /* Stay in place */
-    top: 0px; /* Stay at the top */
-    border-radius: 5px;
+    top: 10px; /* Stay at the top */
+    left: 10px;
 }
 
-/** Side Menu **/
 #side-menu {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    background-color: #84293E;
     position: fixed; /* Stay in place */
+    height: 100%; /* 100% Full-height */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: lightgray;
+    width: 0; /* 0 width - change this with JavaScript */
+    padding-top: 100px; /* Place content 50px from the top */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 50px; /* Place content 50px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -155,43 +162,44 @@ body {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
     margin-left: 50px;
+    font-size: x-large;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-}
+#main {transition: margin-left .5s;}
 
-/** Navigation Links **/
 #side-menu a {
-    padding: 8px 8px 8px 32px;
-    margin-bottom: 100px;
-    text-decoration: none;
-    font-size: 30px;
-    color: black;
     display: block;
+    padding: 0px 0px 0px 30px;
+    margin-bottom: 100px;
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-#side-menu a:hover {
-    color: #f1f1f1;
-}
+#side-menu a:hover {color: #5CB3C4;}
 
-/** Dark Mode Toggle **/
-#dark-mode-toggle {
-    height: 55px;
-    width: 55px;
-    border-radius: 50%;
+#moon-toggle {
     position: absolute;
+    bottom: 50px;
     right: 100px;
-    bottom: 100px;
 }
 
-/* Sets the background to black and text to white */
-.dark-mode{
-    background-color: black;
-    color: white;
+#sun-toggle {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+}
+
+.dark-mode-gray {background-color: #2B2C30; color: white;}
+
+/* || FOOTER */
+
+footer {
+    background-color: #84293E;
+    height: 100px;
+    box-shadow: 0 0 10px black;
 }
