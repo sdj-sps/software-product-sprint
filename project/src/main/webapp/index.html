@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>HeartBeat</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="script.js"></script>
 </head>
 
@@ -13,26 +15,26 @@
         <button id="open-menu-button" class="app-button flex center-xy" onclick="openMenu()"><img
                 src="https://img.icons8.com/ios-filled/30/000000/menu-rounded.png" /></button>
         <div id="side-menu">
-            <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()">&times;</a>
-            <a href="index.html">
-                <h2>Home</h2>
-            </a>
-            <a href="index.html">
-                <h2>Favorites</h2>
-            </a>
+            <a href="javascript:void(0)" id="close-menu-button" onclick="closeMenu()"
+                style="font-size: xx-large;">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="index.html">Favorites</a>
 
-            <button id="dark-mode-toggle" class="app-button flex center-xy" onclick="darkMode()"><img
+            <button id="moon-toggle" class="app-button flex center-xy" onclick="sunToggle(); darkMode();"><img
                     src="https://img.icons8.com/ios-filled/30/000000/moon-symbol.png" /></button>
+
+            <button id="sun-toggle" class="app-button flex center-xy" onclick="moonToggle(); darkMode();"><img
+                    src="https://img.icons8.com/fluent-systems-regular/45/000000/sun.png" /></button>
         </div>
     </div>
 
     <div id="main" class="app-font">
-        <h1 id="main-header" class="app-header center-text flex center-xy">
+        <div id="main-header" class="app-header flex center-xy" style="font-size: xxx-large;">
             HeartBeat
-        </h1>
+        </div>
 
-        <div id="workout-section" class="flex center-xy flex-column">
-            <h1 id="workout-selection-header" class="app-header center-text flex center-xy header-font ">
+        <div id="workout-section" class="flex flex-column center-xy">
+            <h1 id="workout-selection-header" class="app-header flex center-xy" style="font-size: xx-large; font-weight: bold;">
                 Workout Selection
             </h1>
 
@@ -40,10 +42,6 @@
                 <button value="Aerobics" onclick="clickWorkout(this.value)"><img
                         src="https://img.icons8.com/ios-filled/50/000000/gymnastics.png" />
                     <p>Aerobics</p>
-                </button>
-                <button value="Bench Press" onclick="clickWorkout(this.value)"><img
-                        src="https://img.icons8.com/ios-filled/50/000000/bench-press.png" />
-                    <p>Bench Press</p>
                 </button>
                 <button value="Curls" onclick="clickWorkout(this.value)"><img
                         src="https://img.icons8.com/ios-filled/50/000000/curls-with-dumbbells.png" />
@@ -81,52 +79,73 @@
                         src="https://img.icons8.com/ios-filled/50/000000/walking.png" />
                     <p>Walking</p>
                 </button>
-                <button value="Weightlift" onclick="clickWorkout(this.value)"><img
-                        src="https://img.icons8.com/ios-filled/50/000000/deadlift.png" />
-                    <p>Weightlift</p>
-                </button>
             </div>
 
-            <div id="workout-submission-section" class="full-width center-xy flex flex-column">
-                <h2 id="workout-submission-header" class="app-header center-text flex center-xy">
+            <div id="workout-submission-section" class="full-width flex flex-column center-xy"
+                style="padding-bottom: 100px;">
+                <h3 id="workout-submission-header" class="app-header flex center-xy" style="font-size: x-large;">
                     Select a workout above or enter one below:
-                </h2>
+                </h3>
 
-                <form id="workout-submission" class="flex center-y space-between">
-                    <label for="workout-select">Selected Workout</label>
-                    <input type="text" id="workout-select" list="workouts">
-                    <datalist id="workouts" class="app-font">
-                        <option value="Aerobics">
-                        <option value="Bench Press">
-                        <option value="Curls">
-                        <option value="Jogging">
-                        <option value="Pilates">
-                        <option value="Pull-Ups">
-                        <option value="Push-Ups">
-                        <option value="Sit-Ups">
-                        <option value="Squats">
-                        <option value="Treadmill">
-                        <option value="Walking">
-                        <option value="Weightlift">
-                    </datalist>
+                <div id="workout-submission-form" class="flex center-y">
+                    <form id="workout-submission" class="flex center-y space-between">
+                        <label for="workout-select">Selected Workout</label>
+                        <input type="text" id="workout-select" list="workouts">
+                        <datalist id="workouts" class="app-font">
+                            <option value="Aerobics">
+                            <option value="Curls">
+                            <option value="Jogging">
+                            <option value="Pilates">
+                            <option value="Pull-Ups">
+                            <option value="Push-Ups">
+                            <option value="Sit-Ups">
+                            <option value="Squats">
+                            <option value="Treadmill">
+                            <option value="Walking">
+                        </datalist>
 
-                    <label for="hours-select">Hours</label>
-                    <input type="number" id="hours-select" min="0">
+                        <label for="hours-select">Hours</label>
+                        <input type="number" id="hours-select" min="0">
 
-                    <label for="mins-select">Minutes</label>
-                    <input type="number" id="mins-select" min="0">
+                        <label for="mins-select">Minutes</label>
+                        <input type="number" id="mins-select" min="0">
+                    </form>
 
-                    <button id="workout-submit-button" class="app-button flex center-xy" type="submit"><img
+                    <button id="workout-submit-button" class="app-button flex center-xy"
+                        onclick="fetchId(); showPlaylist();"><img
                             src="https://img.icons8.com/fluent-systems-filled/30/000000/enter-2.png" /></button>
-                </form>
+                </div>
             </div>
         </div>
 
-        <footer class="flex center-xy">
-            <button id="scroll-top-button" onclick="topFunction()" class="app-button flex center-xy"><img
+        <div id="playlist-section">
+            <div id="playlist-contents" class="flex flex-column center-xy" style="display: none;">
+                <h1 id="playlist-header" class="flex center-xy">
+                    Recommended Playlist
+                </h1>
+
+                <h1 id="playlist-title" class="flex center-xy"></h1>
+
+                <img id="playlist-thumbnail"></img>
+
+                <div id="playlist-buttons" class="flex center-xy space-between" style="height: 100px">
+                    <a id="playlist-link" class="app-button flex center-xy" style="margin-right: 50px;"><img
+                            src="https://img.icons8.com/fluent-systems-filled/30/000000/play.png" /></a>
+                    <button class="app-button flex center-xy" onclick="hidePlaylist()"><img
+                            src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png" /></button>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="flex center-xy">
+            <button id="scroll-top-button" class="app-button flex center-xy" onclick="backToTop()"><img
                     src="https://img.icons8.com/ios-filled/30/000000/up--v1.png" /></button>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
